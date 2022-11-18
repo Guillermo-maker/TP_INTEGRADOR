@@ -10,6 +10,11 @@ class ChoferAdmin(admin.ModelAdmin):
     list_filter = ("legajo","nombre","apellido")
     search_fields = ['nombre','apellido']
     
+class AtractivoAdmin(admin.ModelAdmin):
+    list_filter = ("nombre","calificacion",)
+    search_fields = ['nombre',"calificacion"]
+
+    
     
 class DetalleCadaParadaAdmin(admin.ModelAdmin):
     list_filter = ("numero_orden","conexion","parada")
@@ -32,8 +37,8 @@ class ViajeAdmin(admin.ModelAdmin):
 
 admin.site.register(Bus,BusAdmin)
 admin.site.register(Chofer,ChoferAdmin)
-admin.site.register(Atractivo)
-admin.site.register(DetalleCadaParada)
+admin.site.register(Atractivo,AtractivoAdmin)
+admin.site.register(DetalleCadaParada,DetalleCadaParadaAdmin)
 admin.site.register(Parada,ParadaAdmin)
 admin.site.register(Recorrido,RecorridoAdmin)
 admin.site.register(Viaje,ViajeAdmin)
