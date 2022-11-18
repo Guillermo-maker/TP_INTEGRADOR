@@ -10,15 +10,17 @@ class Bus(models.Model):
     estado = models.BooleanField(blank=True, null=True)  
     
     def __str__(self) -> str:
-        return f"{self.patente} - {self.estado} - {self.numero_unidad}"
+        return f"-N de patente: {self.patente} -Estado: {self.estado} -N de unidad: {self.numero_unidad}"
 
     
   
 class Chofer(models.Model):
     legajo = models.CharField(max_length=50, blank=True, null=True)
-    fecha_compra = models.DateTimeField(blank=True, null=True) 
     nombre= models.CharField(max_length=50, blank=True, null=True) 
     apellido = models.CharField(max_length=50, blank=True, null=True) 
+
+def __str__(self) -> str:
+        return f"-Legajo: {self.legajo} -Nombre: {self.nombre} -Apellido: {self.apellido}"
 
 
 class Atractivo(models.Model):
