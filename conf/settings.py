@@ -74,11 +74,12 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
+#'NAME': os.path.join(os.path.dirname(__file__),'test.db'),
+#'TEST_NAME': os.path.join(os.path.dirname(__file__),'test.db'),
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'CARLITOS_BUS',
+        'NAME': 'PEPITO_BUS',
         'USER': 'facha',
         'PASSWORD': '46131849',
         'HOST': '127.0.0.1',

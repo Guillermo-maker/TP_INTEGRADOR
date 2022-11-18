@@ -9,9 +9,7 @@ class Bus(models.Model):
     fecha_compra = models.DateField(blank=True, null=True)  # Field name made lowercase.
     estado = models.BooleanField(blank=True, null=True)  # Field name made lowercase.
 
-    class Meta:
-        managed = False
-        db_table = 'BUS'
+
         
         
 class Chofer(models.Model):
@@ -20,9 +18,7 @@ class Chofer(models.Model):
     nombre= models.CharField(max_length=50, blank=True, null=True)  # Field name made lowercase.
     apellido = models.CharField(max_length=50, blank=True, null=True)  # Field name made lowercase.
 
-    class Meta:
-        managed = False
-        db_table = 'CHOFER'
+ 
 
 
 
@@ -30,10 +26,7 @@ class Atractivo(models.Model):
     nombre = models.CharField(max_length=50, blank=True, null=True)  # Field name made lowercase.
     calificacion = models.FloatField(blank=True, null=True)  # Field name made lowercase.
 
-    class Meta:
-        managed = False
-        db_table = 'ATRACTIVO'
-        
+ 
         
         
 class Parada(models.Model):
@@ -42,9 +35,7 @@ class Parada(models.Model):
     direccion = models.CharField(max_length=50, blank=True, null=True)  # Field name made lowercase.
     foto = models.CharField(max_length=50, blank=True, null=True)  # Field name made lowercase.
     atractivos = models.ManyToManyField(Atractivo)
-    class Meta:
-        managed = False
-        db_table = 'PARADA'
+ 
         
         
 
@@ -53,9 +44,7 @@ class DetalleCadaParada(models.Model):
     conexion = models.IntegerField(blank=True, null=True)  # Field name made lowercase.
     parada = models.ForeignKey(Parada, models.DO_NOTHING, blank=True, null=True)  # Field name made lowercase.
 
-    class Meta:
-        managed = False
-        db_table = 'DETALLE_CADA_PARADA'
+
 
 
 
@@ -68,9 +57,7 @@ class Recorrido(models.Model):
     color = models.CharField(max_length=50, blank=True, null=True)  # Field name made lowercase.
     lista_detalle_parada = models.ForeignKey(DetalleCadaParada, models.DO_NOTHING,blank=True, null=True)  # Field name made lowercase.
    
-    class Meta:
-        managed = False
-        db_table = 'RECORRIDO'
+
         
 
 
@@ -81,11 +68,9 @@ class Viaje(models.Model):
     numero = models.IntegerField(blank=True, null=True)
     bus = models.ForeignKey(Bus, models.DO_NOTHING, blank=True, null=True)
     chofer = models.ForeignKey(Chofer, models.DO_NOTHING, blank=True, null=True)
-    recorrido = models.ForeignKey(Recorrido, models.DO_NOTHING,     blank=True, null=True)
+    recorrido = models.ForeignKey(Recorrido, models.DO_NOTHING, blank=True, null=True)
     
     
-    class Meta:
-        managed = False
-        db_table = 'VIAJE'
-    
+
+
 

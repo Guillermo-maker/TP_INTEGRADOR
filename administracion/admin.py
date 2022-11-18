@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from .models import Atractivo,Bus,Chofer,DetalleCadaParada,Parada,Recorrido
+from .models import *
+
 
 
 admin.site.register(Atractivo)
