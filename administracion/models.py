@@ -9,6 +9,9 @@ class Bus(models.Model):
     fecha_compra = models.DateField(blank=True, null=True) 
     estado = models.BooleanField(blank=True, null=True)  
     
+    def __str__(self) -> str:
+        return f"{self.patente} - {self.estado} - {self.numero_unidad}"
+
     
   
 class Chofer(models.Model):
