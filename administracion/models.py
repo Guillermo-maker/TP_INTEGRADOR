@@ -19,7 +19,7 @@ class Chofer(models.Model):
     nombre= models.CharField(max_length=50, blank=True, null=True) 
     apellido = models.CharField(max_length=50, blank=True, null=True) 
 
-def __str__(self) -> str:
+    def __str__(self) -> str:
         return f"-Legajo: {self.legajo} -Nombre: {self.nombre} -Apellido: {self.apellido}"
 
 
@@ -27,6 +27,8 @@ class Atractivo(models.Model):
     nombre = models.CharField(max_length=50, blank=True, null=True)  
     calificacion = models.FloatField(blank=True, null=True)  
     
+    def __str__(self) -> str:
+        return f"-Nombre: {self.nombre} -Calificacion: {self.calificacion}"
 
 class Parada(models.Model):
     nombre = models.CharField(max_length=50, blank=True, null=True)  
@@ -34,12 +36,17 @@ class Parada(models.Model):
     direccion = models.CharField(max_length=50, blank=True, null=True) 
     foto = models.CharField(max_length=50, blank=True, null=True)  
     atractivos = models.ManyToManyField(Atractivo)
-    
+
+    def __str__(self) -> str:
+        return f"-Nombre: {self.nombre} -Direccion: {self.direccion} -Atractivos: {self.atractivos}"  
+
 class DetalleCadaParada(models.Model):
     numero_orden = models.IntegerField(blank=True, null=True) 
     conexion = models.IntegerField(blank=True, null=True)  
     parada = models.ForeignKey(Parada, models.DO_NOTHING, blank=True, null=True)  
-        
+
+    def __str__(self) -> str:
+        return f"-Numero De Orden: {self.numero_orden} -Conexion: {self.conexion} -Parada: {self.parada}"    
 
 class Recorrido(models.Model):
     nombre = models.CharField(max_length=50, blank=True, null=True) 
@@ -48,7 +55,11 @@ class Recorrido(models.Model):
     duracion_aprox = models.IntegerField(blank=True, null=True)  
     frecuencia = models.PositiveIntegerField(blank=True, null=True)
     color = models.CharField(max_length=50, blank=True, null=True)  
-    lista_detalle_parada = models.ForeignKey(DetalleCadaParada, models.DO_NOTHING,blank=True, null=True)  
+    lista_detalle_parada = models.ForeignKey(DetalleCadaParada, models.DO_NOTHING,blank=True, null=True) 
+
+    def __str__(self) -> str:
+        return f"-Nombre: {self.nombre} -Hora de inicio {self.hora_inicio} -Hora de Finalizacion: {self.hora_finalizacion} -Duracion Aprox: {self.duracion_aprox}"
+ 
    
 class Viaje(models.Model):
     hora_inicio_prevista = models.DateTimeField(blank=True, null=True)  
@@ -59,7 +70,8 @@ class Viaje(models.Model):
     chofer = models.ForeignKey(Chofer, models.DO_NOTHING, blank=True, null=True)
     recorrido = models.ForeignKey(Recorrido, models.DO_NOTHING, blank=True, null=True)
         
-
+    def __str__(self) -> str:
+        return f"-H.I.P: {self.hora_inicio_prevista} -H.I: {self.nombre} -H.F: {self.hora_inicio} "
 
 
 
