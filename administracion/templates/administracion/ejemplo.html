@@ -5,6 +5,16 @@
     <title>Mi pagina de prueba 2</title>
   </head>
   <body>
-    <img src="images/firefox-icon.png" alt="Mi imagen de prueba">
+    <img src="images/firefox-icon.png" alt="Mi imagen de prueba 424324">
+
+
+    {% block content %}
+    <h1> "HELLO"  </h1>
+    
+      {% for viaje in viajes %}
+        
+        <h1> {{ viaje.bus.patente}}  </h1>
+      {% endfor %}
+    {% endblock %}
   </body>
 </html>

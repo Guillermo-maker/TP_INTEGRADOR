@@ -53,7 +53,7 @@ class Recorrido(models.Model):
     hora_inicio = models.DateTimeField(blank=True, null=True) 
     hora_finalizacion = models.DateTimeField(blank=True, null=True)  
     duracion_aprox = models.IntegerField(blank=True, null=True)  
-    frecuencia = models.PositiveIntegerField(blank=True, null=True)
+    frecuencia = models.TimeField(blank=True, null=True)
     color = models.CharField(max_length=50, blank=True, null=True)  
     lista_detalle_parada = models.ForeignKey(DetalleCadaParada, models.DO_NOTHING,blank=True, null=True) 
 
@@ -71,7 +71,7 @@ class Viaje(models.Model):
     recorrido = models.ForeignKey(Recorrido, models.DO_NOTHING, blank=True, null=True)
         
     def __str__(self) -> str:
-        return f"-H.I.P: {self.hora_inicio_prevista} -H.I: {self.nombre} -H.F: {self.hora_inicio} "
+        return f"-H.I.P: {self.hora_inicio_prevista} -H.I: {self.numero} -H.F: {self.hora_inicio} "
 
 
 

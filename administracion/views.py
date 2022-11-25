@@ -1,6 +1,12 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import *
     
 
 def lal(request):
-   return render(request,'administracion/ejemplo.html')
+   viajes = Viaje.objects.all()
+   
+   viajesAnalisis= Viaje.objects
+   
+   
+   return render(request,'administracion/ejemplo.html',{"viajes":viajes})
+
