@@ -71,7 +71,7 @@ class Viaje(models.Model):
     recorrido = models.ForeignKey(Recorrido, models.DO_NOTHING, blank=True, null=True)
         
     def __str__(self) -> str:
-        return f"-H.I.P: {self.hora_inicio_prevista} -H.I: {self.nombre} -H.F: {self.hora_inicio} "
+        return f"-H.I.P: {self.hora_inicio_prevista} -H.I: {self.numero} -H.F: {self.hora_inicio} "
 
 
 
