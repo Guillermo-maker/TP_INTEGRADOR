@@ -49,10 +49,11 @@ class DetalleCadaParada(models.Model):
         return f"-Numero De Orden: {self.numero_orden} -Conexion: {self.conexion} -Parada: {self.parada}"    
 
 class Recorrido(models.Model):
+    dia = models.DateField(blank=True, null=True)
     nombre = models.CharField(max_length=50, blank=True, null=True) 
-    hora_inicio = models.DateTimeField(blank=True, null=True) 
-    hora_finalizacion = models.DateTimeField(blank=True, null=True)  
-    duracion_aprox = models.IntegerField(blank=True, null=True)  
+    hora_inicio = models.TimeField(blank=True, null=True) 
+    hora_finalizacion = models.TimeField(blank=True, null=True)  
+    duracion_aprox = models.TimeField(blank=True, null=True)  
     frecuencia = models.TimeField(blank=True, null=True)
     color = models.CharField(max_length=50, blank=True, null=True)  
     lista_detalle_parada = models.ForeignKey(DetalleCadaParada, models.DO_NOTHING,blank=True, null=True) 
@@ -62,9 +63,10 @@ class Recorrido(models.Model):
  
    
 class Viaje(models.Model):
-    hora_inicio_prevista = models.DateTimeField(blank=True, null=True)  
-    hora_inicio = models.DateTimeField(blank=True, null=True)  
-    hora_fin = models.DateTimeField(blank=True, null=True)
+    dia = models.DateField(blank = True, null = True)
+    hora_inicio_prevista = models.TimeField(blank=True, null=True)  
+    hora_inicio = models.TimeField(blank=True, null=True)  
+    hora_fin = models.TimeField(blank=True, null=True)
     numero = models.IntegerField(blank=True, null=True)
     bus = models.ForeignKey(Bus, models.DO_NOTHING, blank=True, null=True)
     chofer = models.ForeignKey(Chofer, models.DO_NOTHING, blank=True, null=True)
@@ -78,7 +80,3 @@ class Viaje(models.Model):
 
         
         
-
-
-
-

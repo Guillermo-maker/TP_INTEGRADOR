@@ -10,3 +10,7 @@ def lal(request):
    
    return render(request,'administracion/ejemplo.html',{"viajes":viajes})
 
+
+def reporte(request):
+    data = Viaje.objects.all()
+    return render(request, 'administracion/reporte.html',{'data': data})
