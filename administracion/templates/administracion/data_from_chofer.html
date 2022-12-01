@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+
+
+{% block content %}
+<div class="container card p-3 mt-5 border-dark" style="width: 95%;">
+    <h5 class="text-center">Agregar Chofer</h5>
+    <hr>
+    <form method="POST" autocomplete="off">
+        {% csrf_token %}
+        {{form.as_p}}
+
+
+        <div class="mt-5">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-secundary ms-2">Reset</button>
+            <a href="{% url 'data_read_buses' %}" class="btn btn-outline-dark ms-2">List All</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
