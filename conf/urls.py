@@ -6,6 +6,8 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='home'),
+    path('loginbus/',views.data_form_buses,name="data_create_buses"),
+    path('listabus/',views.data_read_buses,name="data_read_buses"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
