@@ -10,6 +10,7 @@
             <tr>
                 <th>Nombre</th>
                 <th>Calificación</th>
+                <th colspan="2">Opciones</th>
             </tr>
         </thead>
 
@@ -17,6 +18,8 @@
         <tr>
             <td>{{data.nombre}}</td>
             <td>{{data.calificacion}}</td>
+            <td><a href="edicionAtractivo/{{data.nombre}}" class="btn btn-info">Editar</a></td>
+            <td><a href="eliminarAtractivo/{{data.nombre}}" class="btn btn-danger">Eliminar</a></td>
         </tr>
         {% endfor %}
     </table>
