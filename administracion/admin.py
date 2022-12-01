@@ -21,6 +21,7 @@ class ParadaAdmin(admin.ModelAdmin):
     
     
 class DetalleCadaParadaAdmin(admin.ModelAdmin):
+    
     list_filter = ("conexion","parada")
     search_fields = ["numero_orden"]
     

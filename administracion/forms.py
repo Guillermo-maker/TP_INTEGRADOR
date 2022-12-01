@@ -5,3 +5,4 @@ class ChoferForm(forms.ModelForm):
     class Meta:
         model = Chofer
         fields = '__all__'
+        
