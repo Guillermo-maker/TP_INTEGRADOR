@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<header class="row bg-black">
+    <div class="col-md-4">
+        <img src="{% static 'portfolio/logo.png' %}" alt="">
+    </div>
+    <div class="col-md-8 my-auto">
+        <h1><strong>Servicio Bus</strong></h1>
+        <h3>Consigna 5</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti quas velit animi nulla eius 
+        qui adipisci dolor vel maxime quia cum consequatur laboriosam dolores sit sequi rem consequuntur, 
+        voluptatum ad quos tempore similique. Ratione, molestiae omnis! Magni in rem numquam, ex rerum 
+        eaque sequi beatae totam, pariatur eligendi necessitatibus facere, exercitationem minima! Placeat 
+        deserunt veniam est? Odio laudantium delectus numquam ut praesentium. Enim labore architecto unde,
+        tenetur, consequuntur vero quas sed doloribus, nisi dolores repellendus laboriosam rem iure porro? 
+        Blanditiis alias quo dolorem consequatur minima possimus, reiciendis harum dignissimos vero quaerat 
+        recusandae. Quibusdam ducimus dignissimos iure? Vitae ab nam cum?</p>
+        <a href="{% static 'portfolio/logo.png'}" class="btn btn-primary btn-lg rounded-3 my-3">Integrantes</a>
+    </div>
+</header>
+<div class="row my-4 text-center">
+    <h1>ERSA</h1>
+
+
+    
+    {% for recorrido in recorridos  %}
+
+<div class="col-md-4 p-4">
+    <div class="card bg-black card-project">
+        <div class="card-body">
+            <h2>{{recorrido.nombre}}</h2>
+            <p>{{recorrido.duracion_aprox}}</p>
+            <img src="{{recorrido.image.url}}" alt="{{recorrido.title}}" class="card-img-top">
+        </div>
+    </div>
+</div>
+    
+    {% endfor %}}
+    {% endblock %}
+</div> 
+
+
+
+

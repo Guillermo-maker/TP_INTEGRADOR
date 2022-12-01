@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+
+
+{% block content %}
+<div class="container card p-3 mt-5 border-dark" style="width: 95%;">
+    <a href="{% url 'lista_buses' %}" class="btn btn-outline-primary mb-3">Volver</a>
+    <h5 class="card p-2 text-center mb-3">Agregar Bus</h5>
+    <table class="table table-bordered text-center">
+        <thead class="table-secundary">
+            <tr>
+                <th>Patente</th>
+                <th>numero_unidad</th>
+                <th>fecha_compra</th>
+                <th>estado </th>
+            </tr>
+        </thead>
+
+        {% for data in data_buses%}
+        <tr>
+            <td>{{data.patente}}</td>
+            <td>{{data.numero_unidad}}</td>
+            <td>{{data.fecha_compra}}</td>
+            <td>{{data.estado}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+
+</div>
+{% endblock %}

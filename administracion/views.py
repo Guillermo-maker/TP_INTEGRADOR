@@ -1,12 +1,6 @@
 from django.shortcuts import render
-from .models import *
-    
+from .models import Recorrido
 
-def lal(request):
-   viajes = Viaje.objects.all()
-   
-   viajesAnalisis= Viaje.objects
-   
-   
-   return render(request,'administracion/ejemplo.html',{"viajes":viajes})
-
+def home(request):
+    recorridos = Recorrido.objects.all()
+    return render(request,'home.html',{'recorridos':recorridos})
