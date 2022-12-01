@@ -21,9 +21,9 @@ DATABASES = {
     }
 }   
 
+A continuacion desde la terminal y adentro del proyecto ejecutar python3 manage.py makemigrations, despues python3 manage.py make migrate
 
-
-y por ultimo desde la terminal y adentro del proyecto ejecutar python3 manage.py runserver
+y por ultimo ejecutar python3 manage.py runserver para inciar el servidor local de la pagina web
 
 
 
