@@ -4,9 +4,9 @@ from django.db.models.fields.files import ImageField
 # Create your models here.
 
 class Bus(models.Model):
-    patente = models.IntegerField(blank=True, null=True)  
-    numero_unidad = models.IntegerField(blank=True, null=True) 
-    fecha_compra = models.DateField(blank=True, null=True) 
+    patente = models.IntegerField()  
+    numero_unidad = models.IntegerField() 
+    fecha_compra = models.DateField() 
     estado = models.BooleanField(blank=True, null=True)  
     
     def __str__(self) -> str:

@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+
+
+{% block content %}
+<div class="container card p-3 mt-5 border-dark" style="width: 95%;">
+    <a href="{% url 'data_create_atractivos'%}" class="btn btn-outline-primary mb-3">Agregar Atractivo</a>
+    <table class="table table-bordered text-center">
+        <thead class="table-secundary">
+            <tr>
+                <th>Nombre</th>
+                <th>Calificación</th>
+            </tr>
+        </thead>
+
+        {% for data in data_read_atractivos%}
+        <tr>
+            <td>{{data.nombre}}</td>
+            <td>{{data.calificacion}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+
+</div>
+{% endblock %}

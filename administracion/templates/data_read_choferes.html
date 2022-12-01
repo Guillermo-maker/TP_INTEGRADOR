@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+
+
+{% block content %}
+
+<div class="container card p-3 mt-5 border-dark" style="width: 95%;">
+    <a href="{% url 'data_create_choferes'%}" class="btn btn-outline-primary mb-3">Agregar Chofer</a>
+    <table class="table table-bordered text-center">
+        <thead class="table-secundary">
+            <tr>
+                <th>Legajo</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+            </tr>
+        </thead>
+
+        {% for data in data_read_choferes%}
+        <tr>
+            <td>{{data.legajo}}</td>
+            <td>{{data.nombre}}</td>
+            <td>{{data.apellido}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+
+</div>
+{% endblock %}

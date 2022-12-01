@@ -8,6 +8,11 @@ urlpatterns = [
     path('',views.home,name='home'),
     path('loginbus/',views.data_form_buses,name="data_create_buses"),
     path('listabus/',views.data_read_buses,name="data_read_buses"),
+    path('loginchofer/',views.data_form_choferes,name="data_create_choferes"),
+    path('listachofer/',views.data_read_choferes,name="data_read_choferes"),
+    path('loginatractivo/',views.data_form_atractivos,name="data_create_atractivos"),
+    path('listaatractivo/',views.data_read_atractivos,name="data_read_atractivos"),
 ]
+
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
