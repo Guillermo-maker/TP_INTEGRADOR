@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+
+
+{% block content %}
+<div class="container card p-3 mt-5 border-dark" style="width: 95%;">
+    <a href="{% url 'data_create_buses'%}" class="btn btn-outline-primary mb-3">Leer Chofer</a>
+    <table class="table table-bordered text-center">
+        <thead class="table-secundary">
+            <tr>
+                <th>Nonbre</th>
+                <th>Apellido</th>
+                <th>Legajo</th>
+            </tr>
+        </thead>
+
+        {% for data in data_read_chofer%}
+        <tr>
+            <td>{{data.nombre}}</td>
+            <td>{{data.apellido}}</td>
+            <td>{{data.legajo}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+
+</div>
+{% endblock %}

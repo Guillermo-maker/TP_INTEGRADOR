@@ -4,7 +4,7 @@
 <!-- In the body of the HTML page add this and continue adding all Fields. I have provided three example below -->
  <h1 class='list'>List View</h1>
 
-       {% for k in data  %}
+
         <table border="1">
             <thead>
                 <th>name</th>
@@ -12,6 +12,7 @@
                 <th>hora inicio</th>
                 <th>demora</th>
             </thead>
+            {% for k in data  %}
             <tr>
                 <td>{{k.recorrido.nombre}}</td>
                 <td>{{k.hora_incio_prevista}}</td>
