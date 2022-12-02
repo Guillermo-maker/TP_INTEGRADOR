@@ -7,14 +7,6 @@ import datetime
 
 def reporte(request):
     
-    
-    
-    
-    
-    
-    
-    
-    
     data = Viaje.objects.all()
     dataFiltrada = Viaje.objects.all().filter(dia=datetime.date.today())
     promedio_previ2 = 0
@@ -33,6 +25,8 @@ def reporte(request):
         
         
         toPage.append({'nViaje': i.recorrido.nombre, 'dmViaje':toMinutes, 'dmViaje2':toMinutes2, 'demora':diferencia, })
+        
+        return render(request, 'reporte.html',{'data': toPage, })
   
    # datetime.date.today
     
@@ -53,6 +47,5 @@ def reporte(request):
     #    ValueError(ZeroDivisionError)
         
     
-    return render(request, 'administracion/reporte.html',{'data': toPage, })
 
 #'fase':promedio_previ2, "fa":promedio2
