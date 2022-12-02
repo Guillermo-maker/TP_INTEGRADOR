@@ -8,7 +8,7 @@ import datetime
 def reporte(request):
     
     data = Viaje.objects.all()
-    dataFiltrada = Viaje.objects.all().filter(dia=datetime.date.today())
+    #dataFiltrada = Viaje.objects.all().filter(dia=datetime.date.today())
     promedio_previ2 = 0
     promedio2 = 0
     toPage = []
@@ -26,7 +26,7 @@ def reporte(request):
         
         toPage.append({'nViaje': i.recorrido.nombre, 'dmViaje':toMinutes, 'dmViaje2':toMinutes2, 'demora':diferencia, })
         
-        return render(request, 'reporte.html',{'data': toPage, })
+    return render(request, 'reporte.html',{'data': toPage, })
   
    # datetime.date.today
     
