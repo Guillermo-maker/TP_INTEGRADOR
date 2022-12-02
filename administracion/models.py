@@ -18,7 +18,7 @@ class Bus(models.Model):
         return f"-N de patente: {self.patente} -Estado: {self.estado} -N de unidad: {self.numero_unidad}"
 
     
-  
+ 
 class Chofer(models.Model):
     legajo = models.CharField(max_length=50, blank=True, null=True)
     nombre= models.CharField(max_length=50, blank=True, null=True) 
@@ -78,7 +78,6 @@ class Viaje(models.Model):
         
     def __str__(self) -> str:
         return f"-H.I.P: {self.hora_inicio_prevista} -H.I: {self.numero} -H.F: {self.hora_inicio} "
-
 
 
 

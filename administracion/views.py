@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect, get_object_or_404
 from .models import Recorrido,Bus,Chofer,Atractivo, Viaje
-from .forms import BusForm,ChoferForm,AtractivoForm, ViajeForm
+from .forms import BusForm,ChoferForm,AtractivoForm, ViajeForm, RecorridoForm
 
 
 def home(request):
@@ -95,3 +95,15 @@ def eliminarViaje(request, nombre):
     viaje = Viaje.objects.get(numero=nombre)
     viaje.delete()
     return redirect ('/viaje/listaviaje/')
+
+
+
+def data_form_recorridos(request):
+    if request.method == "POST":
+        form = RecorridoForm (request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect ('/')
+    else:
+        form = RecorridoForm ()
+        return render (request, "data_form_recorridos.html",{'form':form})  
