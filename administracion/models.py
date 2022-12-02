@@ -54,6 +54,7 @@ class DetalleCadaParada(models.Model):
         return f"-Numero De Orden: {self.numero_orden} -Conexion: {self.conexion} -Parada: {self.parada}"    
 
 class Recorrido(models.Model):
+    dia = models.DateField(blank=True, null=True)
     nombre = models.CharField(max_length=50, blank=True, null=True) 
     hora_inicio = models.DateTimeField(blank=True, null=True) 
     hora_finalizacion = models.DateTimeField(blank=True, null=True)  
