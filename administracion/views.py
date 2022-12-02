@@ -1,6 +1,8 @@
-from django.shortcuts import render,redirect
-from .models import Recorrido,Bus,Chofer,Atractivo
+from django.shortcuts import render,redirect, get_object_or_404
+from .models import Recorrido,Bus,Chofer,Atractivo, Viaje
 from .forms import BusForm,ChoferForm,AtractivoForm
+
+
 def home(request):
     recorridos = Recorrido.objects.all()
     return render(request,'home.html',{'recorridos':recorridos})
@@ -57,3 +59,18 @@ def eliminarAtractivo(request, nombre):
     atractivo = Atractivo.objects.get(nombre=nombre)
     atractivo.delete()
     return redirect ('/listaatractivo')
+
+
+
+
+
+
+def renderViajes(request):
+    total_viajes = Viaje.objects.count()
+    viajes = Viaje.objects.order_by("-hora_inicio_prevista")
+    return render(request, "viajes.html", {"viajes": viajes, "total_viajes": total_viajes})
+
+
+def viajes_detail(request, post_id):
+    viaje = get_object_or_404(Viaje, pk=post_id)
+    return render(request, "viajes_detail.html", {"viaje": viaje})

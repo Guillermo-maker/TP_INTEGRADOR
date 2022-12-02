@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h1 class="fs-2">Viajes</h1>
+<h3>Existencias: {{total_viajes}} viaje{{total_viajes|pluralize}}</h3>
+
+{% for viaje in viajes %}
+
+<div class="py-3">
+
+  <div class="card card-body bg-black">
+    <div class="row">
+
+      <div class="col-3">
+        <img class="img-fluid" src="{{viaje.recorrido.image.url}}" alt="{{viaje.numero}}">
+
+      </div>
+      <div class="col-9">
+
+        <h1>{{viaje.numero}}</h1>
+        <p>{{post.description|striptags|truncatechars:100}}</p>
+        <p>hora inicio prevista : {{viaje.hora_inicio_prevista|date:'m h s'|upper}}</p>
+        <p>hora inicio real : {{viaje.hora_inicio|date:'m h s'|upper}}</p>
+        <p>hora finalización : {{viaje.hora_fin|date:'m h s'|upper}}</p>
+
+        <a href="{% url 'viajes_detail' viaje.id %}">{{viaje.numero}}</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}

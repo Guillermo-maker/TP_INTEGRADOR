@@ -13,6 +13,8 @@ urlpatterns = [
     path('loginatractivo/',views.data_form_atractivos,name="data_create_atractivos"),
     path('listaatractivo/',views.data_read_atractivos,name="data_read_atractivos"),
     path('listaatractivo/eliminarAtractivo/<nombre>',views.eliminarAtractivo,name="data_delete_atractivos"),
+    path('viaje/listaviaje/', views.renderViajes, name="viajes"),
+    path("viaje/<int:post_id>", views.viajes_detail, name="viajes_detail"),
 ]
 
 
