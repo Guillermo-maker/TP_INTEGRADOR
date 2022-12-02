@@ -55,13 +55,13 @@ def data_form_atractivos(request):
         form = AtractivoForm ()
         return render (request, "data_form_atractivos.html",{'form':form})  
 
+
+
+
 def eliminarAtractivo(request, nombre):
     atractivo = Atractivo.objects.get(nombre=nombre)
     atractivo.delete()
     return redirect ('/listaatractivo')
-
-
-
 
 
 
@@ -75,3 +75,23 @@ def viajes_detail(request, post_id):
     viaje = get_object_or_404(Viaje, pk=post_id)
     return render(request, "viajes_detail.html", {"viaje": viaje})
 
+def data_read_viajes(request):
+    context ={'data_read_atractivos':Atractivo.objects.all()}
+    return render (request, "viajes.html",context)
+
+
+def data_form_viajes(request):
+    if request.method == "POST":
+        form = ViajeForm (request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect ('/viaje/listaviaje/')
+    else:
+        form = ViajeForm ()
+        return render (request, "data_form_viajes.html",{'form':form})  
+
+
+def eliminarViaje(request, nombre):
+    viaje = Viaje.objects.get(numero=nombre)
+    viaje.delete()
+    return redirect ('/viaje/listaviaje/')

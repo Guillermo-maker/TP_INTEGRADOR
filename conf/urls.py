@@ -15,6 +15,8 @@ urlpatterns = [
     path('listaatractivo/eliminarAtractivo/<nombre>',views.eliminarAtractivo,name="data_delete_atractivos"),
     path('viaje/listaviaje/', views.renderViajes, name="viajes"),
     path("viaje/<int:post_id>", views.viajes_detail, name="viajes_detail"),
+    path('viaje/loginviaje/',views.data_form_viajes,name="data_create_viajes"),
+    path('viaje/listaviaje/eliminarViaje/<nombre>',views.eliminarViaje,name="data_delete_viaje"),
 ]
 
 

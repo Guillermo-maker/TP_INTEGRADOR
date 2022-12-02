@@ -4,12 +4,13 @@
 
 <h1 class="fs-2">Viajes</h1>
 <h3>Existencias: {{total_viajes}} viaje{{total_viajes|pluralize}}</h3>
-
+<a href="{% url 'data_create_viajes'%}" class="btn btn-outline-primary mb-3">Agregar Viaje</a>
 {% for viaje in viajes %}
 
 <div class="py-3">
 
   <div class="card card-body bg-black">
+    <a href="eliminarViaje/{{viaje.numero}}" class="btn btn-danger">Eliminar</a></td>
     <div class="row">
 
       <div class="col-3">
@@ -29,7 +30,5 @@
     </div>
   </div>
 </div>
-
 {% endfor %}
-
 {% endblock %}
