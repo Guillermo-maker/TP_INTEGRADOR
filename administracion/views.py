@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect, get_object_or_404
 from .models import Recorrido,Bus,Chofer,Atractivo, Viaje
-from .forms import BusForm,ChoferForm,AtractivoForm
+from .forms import BusForm,ChoferForm,AtractivoForm, ViajeForm
 
 
 def home(request):
@@ -74,3 +74,4 @@ def renderViajes(request):
 def viajes_detail(request, post_id):
     viaje = get_object_or_404(Viaje, pk=post_id)
     return render(request, "viajes_detail.html", {"viaje": viaje})
+
