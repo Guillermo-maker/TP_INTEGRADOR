@@ -8,16 +8,37 @@
         <table border="1">
             <thead>
                 <th>name</th>
-                <th>Hora inicio pervista</th>
-                <th>hora inicio</th>
+                <th>cantidad minutos en la hora prevista</th>
+                <th>cantidad minutos en la hora transucrrida</th>
                 <th>demora</th>
             </thead>
             {% for k in data  %}
             <tr>
-                <td>{{k.recorrido.nombre}}</td>
-                <td>{{k.hora_incio_prevista}}</td>
-                <td>{{k.hora_inicio}}</td>
-                <td>{{k.numero}}</td>
+                <td> {{k.nViaje}}</td>
+                <td>{{k.dmViaje}}</td>
+                <td>{{k.dmViaje2}}</td>
+                <td>{{k.demora }}</td>
+            
+            </tr>
+            
+            {% endfor %}
+
+            <thead>
+                <th>promedio</th>
+            </thead>
+            {% for k in fase  %}
+            <tr>
+                <td> {{k.fase}}</td>
+            
+            </tr>
+            {% endfor %}
+
+            <thead>
+                <th>promedio2</th>
+            </thead>
+            {% for k in fa  %}
+            <tr>
+                <td> {{k.fa}}</td>
             
             </tr>
             
