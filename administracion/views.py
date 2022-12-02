@@ -53,3 +53,7 @@ def data_form_atractivos(request):
         form = AtractivoForm ()
         return render (request, "data_form_atractivos.html",{'form':form})  
 
+def eliminarAtractivo(request, nombre):
+    atractivo = Atractivo.objects.get(nombre=nombre)
+    atractivo.delete()
+    return redirect ('/listaatractivo')
