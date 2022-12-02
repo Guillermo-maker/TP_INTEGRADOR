@@ -52,3 +52,13 @@ def data_form_atractivos(request):
     else:
         form = AtractivoForm ()
         return render (request, "data_form_atractivos.html",{'form':form})  
+
+def data_form_atractivos(request):
+    if request.method == "POST":
+        form = AtractivoForm (request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect ('/listaatractivo')
+    else:
+        form = AtractivoForm ()
+        return render (request, "data_form_atractivos.html",{'form':form})  
