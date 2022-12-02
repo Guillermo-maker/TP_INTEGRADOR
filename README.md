@@ -2,17 +2,14 @@
 Aqui realizaremos el trabajo- RED DE BUS
 
 
+Primer paso entrar a tu entorno virtual y instalar los requirements con pip install -r requirements.txt
 
 
-Para poder ejecutar el programa debes instalar las requirements con pip install -r requirements.txt
+Luego tienes que abrir otra terminal y entrar en su  cliente mysql y crear una base de datos llamada SERVICIO_BUS
 
 
+Luego tienes que modificar el archivo settings.py y modificar el USER y PASSWORD
 
-Luego tienes que runear el archivo DATABASES.txt en mysql para crear la base de datos
-
-
-
-Luego tienes que modificar el archivo settings.py
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -24,10 +21,12 @@ DATABASES = {
     }
 }   
 
+A continuacion desde la terminal y adentro del proyecto ejecutar python3 manage.py makemigrations, despues python3 manage.py make migrate
+
+y por ultimo ejecutar python3 manage.py runserver para inciar el servidor local de la pagina web
 
 
 
 
 
 
-luego ejecuta el archivo index.py y ingresa a https://localhost:5000/login
